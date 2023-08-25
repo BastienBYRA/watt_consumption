@@ -1,0 +1,8 @@
+Pour lancer le CLI avec Docker
+
+docker run -v /var/run/docker.sock:/var/run/docker.sock -it --name cli_app cli_wattstack:1.0
+
+"-v /var/run/docker.sock:/var/run/docker.sock" permet d'indiquer ou se situe Docker au programme Python
+Si on le précise pas, le programme Python essaie d'accéder a Docker, mais étant déja dans un container Docker, il n'a pas d'accès a Docker
+
+"-it" est pour permettre l'interface de commande, sans, on ne peut rien saisir, et le programme crash à la première demande d'input
